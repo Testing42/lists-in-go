@@ -2,10 +2,69 @@ package main
 
 import "fmt"
 
+type Product struct {
+	Title string
+	ID    int
+	Price float64
+}
+
 func main() {
+
+	//first question
 	hobbies := [3]string{"judo", "karate", "technology"}
 
+	fmt.Println("the entire array")
 	fmt.Println(hobbies)
+
+	//second question
+	firstItem := hobbies[0]
+
+	newSlice := hobbies[1:3]
+
+	fmt.Println("first item:", firstItem)
+	fmt.Println("new slice:", newSlice)
+
+	//third question
+	firstprtSlice := hobbies[0:2]
+	firstprtSliceV2 := hobbies[:2]
+
+	fmt.Println("first half of slice:", firstprtSlice)
+	fmt.Println("first half of sliceV2:", firstprtSliceV2)
+
+	//4th slice
+
+	newReSlice := []string{hobbies[1], hobbies[len(hobbies)-1]}
+
+	fmt.Println("first half of slice:", newReSlice)
+
+	//5th dynamic array
+
+	courseGoals := []string{
+		"Master Go's concurrency model (goroutines and channels).",
+		"Build a fully functional REST API using the standard library.",
+		"Achieve a deep understanding of interface composition.",
+	}
+	fmt.Println("Coursegoals before change", courseGoals)
+
+	courseGoals[1] = "api information for golang."
+
+	courseGoals = append(courseGoals, "sleeping golang microservices.")
+
+	fmt.Println("Coursegoals after change", courseGoals)
+
+	products := []Product{
+		{
+			Title: "Laptop",
+			ID:    101,
+			Price: 1200.50,
+		},
+		{
+			Title: "Mouse",
+			ID:    102,
+			Price: 25.99,
+		},
+	}
+	fmt.Println(products)
 }
 
 // Time to practice what you learned!
